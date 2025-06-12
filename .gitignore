@@ -1,0 +1,11 @@
+# Virtual Environment
+.venv/
+venv/
+*.pyc
+
+# IDE / Editor specific
+.idea/
+.vscode/
+
+# Other
+__pycache__/ 
