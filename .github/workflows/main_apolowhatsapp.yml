@@ -34,6 +34,7 @@ jobs:
         run: |
           cp whatsapp_bot.py ./package/
           cp startup.sh ./package/
+          cp requirements.txt ./package/
           cp -r apolo_faiss/ ./package/
 
       - name: Zip artifact for deployment
