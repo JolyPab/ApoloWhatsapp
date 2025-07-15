@@ -67,7 +67,7 @@ if REDIS_HOST and REDIS_PASSWORD:
             port=REDIS_PORT,
             password=REDIS_PASSWORD,
             ssl=True, # Azure Cache for Redis требует SSL
-            ssl_cert_reqs='CERT_NONE', # Для Azure можно использовать CERT_NONE, если нет своих сертификатов
+            ssl_cert_reqs='none', # ИСПРАВЛЕНО: Для Azure используется 'none', а не 'CERT_NONE'
             socket_connect_timeout=10, # Таймаут подключения в секундах
             socket_timeout=10 # Таймаут операций в секундах
         )

@@ -1,1 +1,528 @@
-aaa
+aaa2025-07-15T11:42:55  No new trace in the past 5 min(s).
+2025-07-15T11:43:05.3362749Z Deploy Async
+2025-07-15T11:43:07.7875732Z Run rsync from: /tmp/zipdeploy/extracted/ to: /home/site/wwwroot/ in 8 parallel threads
+2025-07-15T11:43:07.8213554Z Delete options: clean=False, use manifest=True, directory to ignore=
+2025-07-15T11:43:07.8445753Z Prev manifest = /opt/Kudu/Scripts/firstDeploymentManifest and next /home/site/deployments/0e24ec65-2e52-4072-87c1-8ff50a949352/manifest
+2025-07-15T11:43:07.8573847Z Cleaning up /tmp//filelist.txt and /tmp//splits
+2025-07-15T11:43:07.8740279Z Creating a list of all files at /tmp//filelist.txt
+2025-07-15T11:43:07.8859491Z No directory to exclude.
+2025-07-15T11:43:07.9346264Z Created /tmp//filelist.txt. Total number of files to be synced = 12178.
+2025-07-15T11:43:07.9655821Z Created batches from the list of files. Processing 1523 files in each thread
+2025-07-15T11:43:07.9953070Z Running rsync for filelist /tmp//splits/split.aa from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:43:08.0233579Z Running rsync for filelist /tmp//splits/split.ab from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:43:08.0703210Z Running rsync for filelist /tmp//splits/split.ad from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:43:08.1074169Z Running rsync for filelist /tmp//splits/split.ae from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:43:08.1757613Z Running rsync for filelist /tmp//splits/split.ac from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:43:08.1858242Z Running rsync for filelist /tmp//splits/split.af from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:43:08.2168802Z Running rsync for filelist /tmp//splits/split.ag from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:43:08.2341765Z Running rsync for filelist /tmp//splits/split.ah from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+2025-07-15T11:44:55  No new trace in the past 1 min(s).
+2025-07-15T11:45:55  No new trace in the past 2 min(s).
+2025-07-15T11:46:38.8752623Z ...........................................................................................................................................................................................................
+2025-07-15T11:46:38.8752985Z
+2025-07-15T11:46:38.9140895Z Number of files: 1,797 (reg: 1,517, dir: 280)
+2025-07-15T11:46:38.9313452Z Number of created files: 1,711 (reg: 1,517, dir: 194)
+2025-07-15T11:46:38.9469047Z Number of deleted files: 0
+2025-07-15T11:46:38.9711323Z Number of regular files transferred: 1,517
+2025-07-15T11:46:38.9859440Z Total file size: 70.41M bytes
+2025-07-15T11:46:39.0007442Z Total transferred file size: 70.41M bytes
+2025-07-15T11:46:39.0295600Z Literal data: 70.41M bytes
+2025-07-15T11:46:39.0507890Z Matched data: 0 bytes
+2025-07-15T11:46:39.0714656Z File list size: 0
+2025-07-15T11:46:39.0920998Z File list generation time: 1.063 seconds
+2025-07-15T11:46:39.1218906Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:39.1459200Z Total bytes sent: 18.43M
+2025-07-15T11:46:39.1735175Z Total bytes received: 29.45K
+2025-07-15T11:46:39.1989296Z
+2025-07-15T11:46:39.2169058Z sent 18.43M bytes  received 29.45K bytes  88.10K bytes/sec
+2025-07-15T11:46:39.2395710Z total size is 70.41M  speedup is 3.81
+2025-07-15T11:46:39.2681094Z Attempt 1: Rsync for filelist /tmp//splits/split.ah completed with exit code 0
+2025-07-15T11:46:39.2831394Z
+2025-07-15T11:46:39.3060235Z Number of files: 1,796 (reg: 1,523, dir: 273)
+2025-07-15T11:46:39.3612862Z Number of created files: 1,711 (reg: 1,522, dir: 189)
+2025-07-15T11:46:39.3963789Z Number of deleted files: 0
+2025-07-15T11:46:39.4334068Z Number of regular files transferred: 1,523
+2025-07-15T11:46:39.4540132Z Total file size: 27.66M bytes
+2025-07-15T11:46:39.4740217Z Total transferred file size: 27.66M bytes
+2025-07-15T11:46:39.4925864Z Literal data: 27.66M bytes
+2025-07-15T11:46:39.5405604Z Matched data: 0 bytes
+2025-07-15T11:46:39.5609718Z File list size: 0
+2025-07-15T11:46:39.5815065Z File list generation time: 1.237 seconds
+2025-07-15T11:46:39.6046694Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:39.6251346Z Total bytes sent: 7.76M
+2025-07-15T11:46:39.6571985Z Total bytes received: 29.56K
+2025-07-15T11:46:39.6778737Z
+2025-07-15T11:46:39.6960325Z sent 7.76M bytes  received 29.56K bytes  37.20K bytes/sec
+2025-07-15T11:46:39.7158522Z total size is 27.66M  speedup is 3.55
+2025-07-15T11:46:39.7464087Z Attempt 1: Rsync for filelist /tmp//splits/split.ad completed with exit code 0
+2025-07-15T11:46:39.7652952Z
+2025-07-15T11:46:39.7863697Z Number of files: 1,720 (reg: 1,523, dir: 197)
+2025-07-15T11:46:39.8046430Z Number of created files: 1,650 (reg: 1,520, dir: 130)
+2025-07-15T11:46:39.8315277Z Number of deleted files: 0
+2025-07-15T11:46:39.8536321Z Number of regular files transferred: 1,523
+2025-07-15T11:46:39.8697516Z Total file size: 16.94M bytes
+2025-07-15T11:46:39.8903010Z Total transferred file size: 16.94M bytes
+2025-07-15T11:46:39.9035513Z Literal data: 16.94M bytes
+2025-07-15T11:46:39.9269293Z Matched data: 0 bytes
+2025-07-15T11:46:39.9575031Z File list size: 0
+2025-07-15T11:46:39.9808902Z File list generation time: 1.379 seconds
+2025-07-15T11:46:40.0002456Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:40.0254139Z Total bytes sent: 5.98M
+2025-07-15T11:46:40.0388821Z Total bytes received: 29.39K
+2025-07-15T11:46:40.0612401Z
+2025-07-15T11:46:40.0892116Z sent 5.98M bytes  received 29.39K bytes  28.52K bytes/sec
+2025-07-15T11:46:40.1137873Z total size is 16.94M  speedup is 2.82
+2025-07-15T11:46:40.1323137Z Attempt 1: Rsync for filelist /tmp//splits/split.af completed with exit code 0
+2025-07-15T11:46:40.6731465Z
+2025-07-15T11:46:40.7444269Z Number of files: 1,889 (reg: 1,523, dir: 366)
+2025-07-15T11:46:40.7671184Z Number of created files: 1,770 (reg: 1,523, dir: 247)
+2025-07-15T11:46:40.7854740Z Number of deleted files: 0
+2025-07-15T11:46:40.8119280Z Number of regular files transferred: 1,523
+2025-07-15T11:46:40.8324673Z Total file size: 40.73M bytes
+2025-07-15T11:46:40.8529432Z Total transferred file size: 40.73M bytes
+2025-07-15T11:46:40.8899582Z Literal data: 40.73M bytes
+2025-07-15T11:46:40.9282837Z Matched data: 0 bytes
+2025-07-15T11:46:40.9518441Z File list size: 0
+2025-07-15T11:46:40.9685291Z File list generation time: 1.295 seconds
+2025-07-15T11:46:40.9977146Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:41.0271827Z Total bytes sent: 10.78M
+2025-07-15T11:46:41.0535413Z Total bytes received: 29.74K
+2025-07-15T11:46:41.0773857Z
+2025-07-15T11:46:41.1061091Z sent 10.78M bytes  received 29.74K bytes  51.34K bytes/sec
+2025-07-15T11:46:41.1244856Z total size is 40.73M  speedup is 3.77
+2025-07-15T11:46:41.1462804Z Attempt 1: Rsync for filelist /tmp//splits/split.ag completed with exit code 0
+2025-07-15T11:46:43.5022406Z
+2025-07-15T11:46:43.5695066Z Number of files: 1,754 (reg: 1,523, dir: 231)
+2025-07-15T11:46:43.6110729Z Number of created files: 1,682 (reg: 1,523, dir: 159)
+2025-07-15T11:46:43.6339894Z Number of deleted files: 0
+2025-07-15T11:46:43.6660258Z Number of regular files transferred: 1,523
+2025-07-15T11:46:43.6888061Z Total file size: 20.40M bytes
+2025-07-15T11:46:43.7234286Z Total transferred file size: 20.40M bytes
+2025-07-15T11:46:43.7365557Z Literal data: 20.40M bytes
+2025-07-15T11:46:43.7689490Z Matched data: 0 bytes
+2025-07-15T11:46:43.7812820Z File list size: 0
+2025-07-15T11:46:43.7918212Z File list generation time: 1.342 seconds
+2025-07-15T11:46:43.8064867Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:43.8262348Z Total bytes sent: 5.90M
+2025-07-15T11:46:43.8565989Z Total bytes received: 29.46K
+2025-07-15T11:46:43.8924336Z
+2025-07-15T11:46:43.9161532Z sent 5.90M bytes  received 29.46K bytes  27.77K bytes/sec
+2025-07-15T11:46:43.9475076Z total size is 20.40M  speedup is 3.44
+2025-07-15T11:46:43.9716915Z Attempt 1: Rsync for filelist /tmp//splits/split.ae completed with exit code 0
+2025-07-15T11:46:46.7623820Z
+2025-07-15T11:46:46.8242645Z Number of files: 1,725 (reg: 1,523, dir: 202)
+2025-07-15T11:46:46.8430594Z Number of created files: 1,669 (reg: 1,522, dir: 147)
+2025-07-15T11:46:46.8664208Z Number of deleted files: 0
+2025-07-15T11:46:46.8873165Z Number of regular files transferred: 1,523
+2025-07-15T11:46:46.9069891Z Total file size: 174.52M bytes
+2025-07-15T11:46:46.9401234Z Total transferred file size: 174.52M bytes
+2025-07-15T11:46:46.9599841Z Literal data: 174.52M bytes
+2025-07-15T11:46:46.9846456Z Matched data: 0 bytes
+2025-07-15T11:46:47.0091576Z File list size: 0
+2025-07-15T11:46:47.0288337Z File list generation time: 1.259 seconds
+2025-07-15T11:46:47.0500765Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:47.0699563Z Total bytes sent: 29.38M
+2025-07-15T11:46:47.1051110Z Total bytes received: 29.44K
+2025-07-15T11:46:47.1255999Z
+2025-07-15T11:46:47.1630093Z sent 29.38M bytes  received 29.44K bytes  135.20K bytes/sec
+2025-07-15T11:46:47.1840458Z total size is 174.52M  speedup is 5.93
+2025-07-15T11:46:47.2057926Z Attempt 1: Rsync for filelist /tmp//splits/split.ac completed with exit code 0
+2025-07-15T11:46:49.0352218Z
+2025-07-15T11:46:49.0828876Z Number of files: 1,942 (reg: 1,523, dir: 419)
+2025-07-15T11:46:49.1401729Z Number of created files: 1,804 (reg: 1,523, dir: 281)
+2025-07-15T11:46:49.1597032Z Number of deleted files: 0
+2025-07-15T11:46:49.1789725Z Number of regular files transferred: 1,523
+2025-07-15T11:46:49.1972599Z Total file size: 11.80M bytes
+2025-07-15T11:46:49.2213620Z Total transferred file size: 11.80M bytes
+2025-07-15T11:46:49.2426775Z Literal data: 11.80M bytes
+2025-07-15T11:46:49.2620915Z Matched data: 0 bytes
+2025-07-15T11:46:49.2839229Z File list size: 0
+2025-07-15T11:46:49.3042215Z File list generation time: 1.353 seconds
+2025-07-15T11:46:49.3304848Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:49.3502188Z Total bytes sent: 3.16M
+2025-07-15T11:46:49.3723595Z Total bytes received: 29.84K
+2025-07-15T11:46:49.3925215Z
+2025-07-15T11:46:49.4126445Z sent 3.16M bytes  received 29.84K bytes  14.59K bytes/sec
+2025-07-15T11:46:49.4328173Z total size is 11.80M  speedup is 3.70
+2025-07-15T11:46:49.4534131Z Attempt 1: Rsync for filelist /tmp//splits/split.ab completed with exit code 0
+2025-07-15T11:46:49.7555433Z
+2025-07-15T11:46:49.7717640Z Number of files: 1,754 (reg: 1,523, dir: 231)
+2025-07-15T11:46:49.7846580Z Number of created files: 1,682 (reg: 1,523, dir: 159)
+2025-07-15T11:46:49.8002591Z Number of deleted files: 0
+2025-07-15T11:46:49.8083794Z Number of regular files transferred: 1,523
+2025-07-15T11:46:49.8189604Z Total file size: 6.48M bytes
+2025-07-15T11:46:49.8288485Z Total transferred file size: 6.48M bytes
+2025-07-15T11:46:49.8477751Z Literal data: 6.48M bytes
+2025-07-15T11:46:49.8618847Z Matched data: 0 bytes
+2025-07-15T11:46:49.8715895Z File list size: 0
+2025-07-15T11:46:49.8833324Z File list generation time: 1.376 seconds
+2025-07-15T11:46:49.8938978Z File list transfer time: 0.000 seconds
+2025-07-15T11:46:49.9066689Z Total bytes sent: 1.79M
+2025-07-15T11:46:49.9171867Z Total bytes received: 29.47K
+2025-07-15T11:46:49.9286072Z
+2025-07-15T11:46:49.9407163Z sent 1.79M bytes  received 29.47K bytes  8.24K bytes/sec
+2025-07-15T11:46:49.9518760Z total size is 6.48M  speedup is 3.57
+2025-07-15T11:46:49.9631175Z Attempt 1: Rsync for filelist /tmp//splits/split.aa completed with exit code 0
+2025-07-15T11:46:49.9740895Z Deleting files not present in /tmp/zipdeploy/extracted/ from /home/site/wwwroot/ based on manifest file /opt/Kudu/Scripts/firstDeploymentManifest
+2025-07-15T11:46:49.9846306Z Number of files deleted: 0. See /tmp//rsync_deletion_logs.txt for more details.
+2025-07-15T11:46:50.0005252Z create new manifest file at /home/site/deployments/0e24ec65-2e52-4072-87c1-8ff50a949352/manifest
+2025-07-15T11:46:50.5474035Z Completed successfully in 223 seconds
+2025-07-15T11:47:55  No new trace in the past 1 min(s).
+2025-07-15T11:47:59.8887453Z Container start method called.
+2025-07-15T11:47:59.9143247Z Establishing network.
+2025-07-15T11:47:59.9147822Z Pulling image: appsvc/python:3.11_20250506.5.tuxprod.
+2025-07-15T11:48:24.9262286Z Image appsvc/python:3.11_20250506.5.tuxprod is pulled from registry 10.1.0.4:13209
+2025-07-15T11:48:24.9279318Z Container is starting.
+2025-07-15T11:48:24.9282852Z Establishing user namespace if not established already.
+2025-07-15T11:48:24.9285629Z Establishing network if not established already.
+2025-07-15T11:48:24.9288104Z Mounting volumes.
+2025-07-15T11:48:24.9304898Z Nested mountpoint
+2025-07-15T11:48:24.9439365Z Nested mountpoint volatile/logs
+2025-07-15T11:48:24.9475526Z Nested mountpoint
+2025-07-15T11:48:24.9878109Z Nested mountpoint
+2025-07-15T11:48:24.9894690Z Nested mountpoint
+2025-07-15T11:48:24.9942279Z Nested mountpoint
+2025-07-15T11:48:24.9950495Z Nested mountpoint
+2025-07-15T11:48:24.9987087Z Nested mountpoint
+2025-07-15T11:48:25.3033571Z Creating container.
+2025-07-15T11:48:25.3037774Z Creating pipes for streaming container io.
+2025-07-15T11:48:25.3039145Z Creating stdout named pipe at /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stdout_d5093a1e500446cfa1556d554b73a2df.
+2025-07-15T11:48:25.3049270Z Successfully created stdout named pipe at: /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stdout_d5093a1e500446cfa1556d554b73a2df.
+2025-07-15T11:48:25.3052954Z Opening named pipe /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stdout_d5093a1e500446cfa1556d554b73a2df for reading in non-blocking mode.
+2025-07-15T11:48:25.3056917Z Successfully opened named pipe: /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stdout_d5093a1e500446cfa1556d554b73a2df.
+2025-07-15T11:48:25.3074209Z Successfully removed non-blocking flag from /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stdout_d5093a1e500446cfa1556d554b73a2df.
+2025-07-15T11:48:25.3075452Z Creating stderr named pipe at /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stderr_8665e9dbc8414345ab3f86ba2facc353.
+2025-07-15T11:48:25.3081399Z Successfully created stderr named pipe at: /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stderr_8665e9dbc8414345ab3f86ba2facc353.
+2025-07-15T11:48:25.3084664Z Opening named pipe /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stderr_8665e9dbc8414345ab3f86ba2facc353 for reading in non-blocking mode.
+2025-07-15T11:48:25.3087191Z Successfully opened named pipe: /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stderr_8665e9dbc8414345ab3f86ba2facc353.
+2025-07-15T11:48:25.3088328Z Successfully removed non-blocking flag from /podr/container/pipe/588c0fb8eda1_apolowhatsapp/stderr_8665e9dbc8414345ab3f86ba2facc353.
+2025-07-15T11:48:25.3090558Z Creating container with image: appsvc/python:3.11_20250506.5.tuxprod from registry: 10.1.0.4:13209 and fully qualified image name: 10.1.0.4:13209/appsvc/python:3.11_20250506.5.tuxprod
+2025-07-15T11:48:25.8285919Z    _____
+2025-07-15T11:48:25.8306857Z   /  _  \ __________ _________   ____
+2025-07-15T11:48:25.8307023Z  /  /_\  \\___   /  |  \_  __ \_/ __ \
+2025-07-15T11:48:25.8307064Z /    |    \/    /|  |  /|  | \/\  ___/
+2025-07-15T11:48:25.8307096Z \____|__  /_____ \____/ |__|    \___  >
+2025-07-15T11:48:25.8307127Z         \/      \/                  \/
+2025-07-15T11:48:25.8307194Z A P P   S E R V I C E   O N   L I N U X
+2025-07-15T11:48:25.8310274Z
+2025-07-15T11:48:25.8310391Z Documentation: http://aka.ms/webapp-linux
+2025-07-15T11:48:25.8310433Z Python 3.11.12
+2025-07-15T11:48:25.8317553Z Note: Any data outside '/home' is not persisted
+2025-07-15T11:48:26.4036048Z Starting OpenBSD Secure Shell server: sshd.
+2025-07-15T11:48:26.4191472Z WEBSITES_INCLUDE_CLOUD_CERTS is not set to true.
+2025-07-15T11:48:26.4435881Z Updating certificates in /etc/ssl/certs...
+2025-07-15T11:48:28.3949262Z 2 added, 0 removed; done.
+2025-07-15T11:48:28.3950190Z Running hooks in /etc/ca-certificates/update.d...
+2025-07-15T11:48:28.3958694Z done.
+2025-07-15T11:48:28.4010120Z CA certificates copied and updated successfully.
+2025-07-15T11:48:28.4293035Z Site's appCommandLine: bash startup.sh
+2025-07-15T11:48:28.6206600Z Starting periodic command scheduler: cron.
+2025-07-15T11:48:28.6254550Z Launching oryx with: create-script -appPath /home/site/wwwroot -output /opt/startup/startup.sh -virtualEnvName antenv -defaultApp /opt/defaultsite -userStartupCommand 'bash startup.sh'
+2025-07-15T11:48:28.7965646Z Could not find build manifest file at '/home/site/wwwroot/oryx-manifest.toml'
+2025-07-15T11:48:28.7966441Z Could not find operation ID in manifest. Generating an operation id...
+2025-07-15T11:48:28.7967928Z Build Operation ID: ad881cf2-bb67-49ed-a464-ea6deca10122
+2025-07-15T11:48:25.7222155Z Starting container: 588c0fb8eda1_apolowhatsapp.
+2025-07-15T11:48:25.7498550Z Starting watchers and probes.
+2025-07-15T11:48:25.7509695Z Starting metrics collection.
+2025-07-15T11:48:25.7521099Z Container is running.
+2025-07-15T11:48:25.7773351Z Container start method finished after 25888 ms.
+2025-07-15T11:48:28.9540926Z Oryx Version: 0.2.20250505.1, Commit: bec89959884a7663432d6e3c4d36acc30657cb85, ReleaseTagName: 20250505.1
+2025-07-15T11:48:28.9836672Z Writing output script to '/opt/startup/startup.sh'
+2025-07-15T11:48:29.0270388Z WARNING: Could not find virtual environment directory /home/site/wwwroot/antenv.
+2025-07-15T11:48:29.0289703Z WARNING: Could not find package directory /home/site/wwwroot/__oryx_packages__.
+2025-07-15T11:48:29.0381008Z --- Running startup.sh ---
+2025-07-15T11:48:29.0409133Z Current directory: /home/site/wwwroot
+2025-07-15T11:48:29.0416694Z --- Checking Environment Variables ---
+2025-07-15T11:48:29.0422648Z AZURE_OPENAI_API_KEY is SET.
+2025-07-15T11:48:29.0430074Z GOOGLE_CREDENTIALS_JSON is NOT set.
+2025-07-15T11:48:29.0443876Z APIFY_TOKEN is NOT set.
+2025-07-15T11:48:29.0452243Z --- Listing contents of /home/site/wwwroot ---
+2025-07-15T11:48:29.0719778Z total 203725
+2025-07-15T11:48:29.0720465Z drwxrwxrwx 2 nobody nogroup     40960 Jul 15 11:43 .
+2025-07-15T11:48:29.0720510Z drwxrwxrwx 2 nobody nogroup      4096 Jul 15 02:29 ..
+2025-07-15T11:48:29.0720535Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 aiohappyeyeballs
+2025-07-15T11:48:29.0720558Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 aiohappyeyeballs-2.6.1.dist-info
+2025-07-15T11:48:29.0720582Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 aiohttp
+2025-07-15T11:48:29.0720874Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 aiohttp-3.12.14.dist-info
+2025-07-15T11:48:29.0720923Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 aiosignal
+2025-07-15T11:48:29.0720957Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 aiosignal-1.4.0.dist-info
+2025-07-15T11:48:29.0721002Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 annotated_types
+2025-07-15T11:48:29.0721032Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 annotated_types-0.7.0.dist-info
+2025-07-15T11:48:29.0721062Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 anyio
+2025-07-15T11:48:29.0721555Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 anyio-4.9.0.dist-info
+2025-07-15T11:48:29.0721606Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 apolo_faiss
+2025-07-15T11:48:29.0721636Z drwxrwxrwx 2 nobody nogroup         0 Jun 12 08:58 __app_packages__
+2025-07-15T11:48:29.0721666Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 attr
+2025-07-15T11:48:29.0721696Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 attrs
+2025-07-15T11:48:29.0721744Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 attrs-25.3.0.dist-info
+2025-07-15T11:48:29.0722762Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 azure
+2025-07-15T11:48:29.0722800Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 azure_core-1.35.0.dist-info
+2025-07-15T11:48:29.0722838Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 azure_identity-1.23.0.dist-info
+2025-07-15T11:48:29.0722873Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 bin
+2025-07-15T11:48:29.0722909Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 blinker
+2025-07-15T11:48:29.0722955Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 blinker-1.9.0.dist-info
+2025-07-15T11:48:29.0722989Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 certifi
+2025-07-15T11:48:29.0723022Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 certifi-2025.7.14.dist-info
+2025-07-15T11:48:29.0723056Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 cffi
+2025-07-15T11:48:29.0723088Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 cffi-1.17.1.dist-info
+2025-07-15T11:48:29.0723136Z -rwxrwxrwx 1 nobody nogroup   1068624 Jul 15 11:41 _cffi_backend.cpython-311-x86_64-linux-gnu.so
+2025-07-15T11:48:29.0723168Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 charset_normalizer
+2025-07-15T11:48:29.0723199Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 charset_normalizer-3.4.2.dist-info
+2025-07-15T11:48:29.0723230Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 click
+2025-07-15T11:48:29.0723287Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 click-8.2.1.dist-info
+2025-07-15T11:48:29.0723340Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 colorama
+2025-07-15T11:48:29.0723370Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 colorama-0.4.6.dist-info
+2025-07-15T11:48:29.0723398Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 cryptography
+2025-07-15T11:48:29.0723427Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 cryptography-45.0.5.dist-info
+2025-07-15T11:48:29.0723457Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 dataclasses_json
+2025-07-15T11:48:29.0723497Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 dataclasses_json-0.6.7.dist-info
+2025-07-15T11:48:29.0723529Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 distro
+2025-07-15T11:48:29.0723562Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 distro-1.9.0.dist-info
+2025-07-15T11:48:29.0723593Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 dotenv
+2025-07-15T11:48:29.0723623Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 faiss
+2025-07-15T11:48:29.0723655Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 faiss_cpu-1.11.0.post1.dist-info
+2025-07-15T11:48:29.0723696Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 faiss_cpu.libs
+2025-07-15T11:48:29.0723726Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 flask
+2025-07-15T11:48:29.0723758Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 flask-3.1.1.dist-info
+2025-07-15T11:48:29.0723787Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 frozenlist
+2025-07-15T11:48:29.0723817Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 frozenlist-1.7.0.dist-info
+2025-07-15T11:48:29.0723846Z -rwxrwxrwx 1 nobody nogroup       114 Jun 12 07:42 .gitignore
+2025-07-15T11:48:29.0723886Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 greenlet
+2025-07-15T11:48:29.0723917Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 greenlet-3.2.3.dist-info
+2025-07-15T11:48:29.0723946Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 gunicorn
+2025-07-15T11:48:29.0723978Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 gunicorn-23.0.0.dist-info
+2025-07-15T11:48:29.0724007Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 h11
+2025-07-15T11:48:29.0724045Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 h11-0.16.0.dist-info
+2025-07-15T11:48:29.0724075Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 httpcore
+2025-07-15T11:48:29.0724105Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 httpcore-1.0.9.dist-info
+2025-07-15T11:48:29.0724135Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 httpx
+2025-07-15T11:48:29.0724163Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 httpx-0.28.1.dist-info
+2025-07-15T11:48:29.0724193Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 httpx_sse
+2025-07-15T11:48:29.0754555Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 httpx_sse-0.4.1.dist-info
+2025-07-15T11:48:29.0754713Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 idna
+2025-07-15T11:48:29.0754756Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 idna-3.10.dist-info
+2025-07-15T11:48:29.0754790Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 include
+2025-07-15T11:48:29.0754822Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 itsdangerous
+2025-07-15T11:48:29.0754853Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 itsdangerous-2.2.0.dist-info
+2025-07-15T11:48:29.0754915Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 jinja2
+2025-07-15T11:48:29.0754949Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 jinja2-3.1.6.dist-info
+2025-07-15T11:48:29.0754981Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 jiter
+2025-07-15T11:48:29.0755016Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 jiter-0.10.0.dist-info
+2025-07-15T11:48:29.0755051Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 jsonpatch-1.33.dist-info
+2025-07-15T11:48:29.0755098Z -rwxrwxrwx 1 nobody nogroup     29778 Jul 15 11:41 jsonpatch.py
+2025-07-15T11:48:29.0755133Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 jsonpointer-3.0.0.dist-info
+2025-07-15T11:48:29.0755171Z -rwxrwxrwx 1 nobody nogroup     10601 Jul 15 11:41 jsonpointer.py
+2025-07-15T11:48:29.0755210Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 jwt
+2025-07-15T11:48:29.0755244Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langchain
+2025-07-15T11:48:29.0755288Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langchain-0.3.26.dist-info
+2025-07-15T11:48:29.0755320Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langchain_community
+2025-07-15T11:48:29.0755355Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langchain_community-0.3.27.dist-info
+2025-07-15T11:48:29.0755390Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 langchain_core
+2025-07-15T11:48:29.0755424Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 langchain_core-0.3.68.dist-info
+2025-07-15T11:48:29.0755458Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langchain_openai
+2025-07-15T11:48:29.0755502Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langchain_openai-0.3.28.dist-info
+2025-07-15T11:48:29.0755534Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langchain_text_splitters
+2025-07-15T11:48:29.0755568Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 langchain_text_splitters-0.3.8.dist-info
+2025-07-15T11:48:29.0755599Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langsmith
+2025-07-15T11:48:29.0755631Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 langsmith-0.4.5.dist-info
+2025-07-15T11:48:29.0755674Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 markupsafe
+2025-07-15T11:48:29.0755707Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 MarkupSafe-3.0.2.dist-info
+2025-07-15T11:48:29.0755741Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 marshmallow
+2025-07-15T11:48:29.0756072Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 marshmallow-3.26.1.dist-info
+2025-07-15T11:48:29.0756123Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 msal
+2025-07-15T11:48:29.0756158Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 msal-1.32.3.dist-info
+2025-07-15T11:48:29.0756204Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 msal_extensions
+2025-07-15T11:48:29.0756238Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 msal_extensions-1.3.1.dist-info
+2025-07-15T11:48:29.0756269Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 multidict
+2025-07-15T11:48:29.0756301Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 multidict-6.6.3.dist-info
+2025-07-15T11:48:29.0756333Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 mypy_extensions-1.1.0.dist-info
+2025-07-15T11:48:29.0756368Z -rwxrwxrwx 1 nobody nogroup      7754 Jul 15 11:41 mypy_extensions.py
+2025-07-15T11:48:29.0756411Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 numpy
+2025-07-15T11:48:29.0756442Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 numpy-2.3.1.dist-info
+2025-07-15T11:48:29.0756474Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 numpy.libs
+2025-07-15T11:48:29.0756505Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 openai
+2025-07-15T11:48:29.0756538Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 openai-1.95.1.dist-info
+2025-07-15T11:48:29.0756577Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 orjson
+2025-07-15T11:48:29.0756613Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 orjson-3.10.18.dist-info
+2025-07-15T11:48:29.0756647Z -rwxrwxrwx 1 nobody nogroup        16 Jul 15 11:12 .ostype
+2025-07-15T11:48:29.0756680Z -rwxrwxrwx 1 nobody nogroup 207175987 Jul 15 11:12 output.tar.gz
+2025-07-15T11:48:29.0756712Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 packaging
+2025-07-15T11:48:29.0756744Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 packaging-24.2.dist-info
+2025-07-15T11:48:29.0756785Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 propcache
+2025-07-15T11:48:29.0756818Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 propcache-0.3.2.dist-info
+2025-07-15T11:48:29.0756848Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 __pycache__
+2025-07-15T11:48:29.0756879Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 pycparser
+2025-07-15T11:48:29.0756912Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 pycparser-2.22.dist-info
+2025-07-15T11:48:29.0756943Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 pydantic
+2025-07-15T11:48:29.0756986Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 pydantic-2.11.7.dist-info
+2025-07-15T11:48:29.0757020Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 pydantic_core
+2025-07-15T11:48:29.0757235Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 pydantic_core-2.33.2.dist-info
+2025-07-15T11:48:29.0757279Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 pydantic_settings
+2025-07-15T11:48:29.0757313Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 pydantic_settings-2.10.1.dist-info
+2025-07-15T11:48:29.0757356Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 PyJWT-2.10.1.dist-info
+2025-07-15T11:48:29.0757388Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 python_dotenv-1.1.1.dist-info
+2025-07-15T11:48:29.0757420Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 PyYAML-6.0.2.dist-info
+2025-07-15T11:48:29.0757472Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 redis
+2025-07-15T11:48:29.0757520Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 redis-6.2.0.dist-info
+2025-07-15T11:48:29.0757553Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 regex
+2025-07-15T11:48:29.0757585Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 regex-2024.11.6.dist-info
+2025-07-15T11:48:29.0757616Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 requests
+2025-07-15T11:48:29.0757646Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 requests-2.32.4.dist-info
+2025-07-15T11:48:29.0757690Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 requests_toolbelt
+2025-07-15T11:48:29.0757724Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 requests_toolbelt-1.0.0.dist-info
+2025-07-15T11:48:29.0757757Z -rwxrwxrwx 1 nobody nogroup       874 Jul 15 11:42 requirements.txt
+2025-07-15T11:48:29.0757791Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 six-1.17.0.dist-info
+2025-07-15T11:48:29.0757822Z -rwxrwxrwx 1 nobody nogroup     34703 Jul 15 11:41 six.py
+2025-07-15T11:48:29.0757859Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 sniffio
+2025-07-15T11:48:29.0757889Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 sniffio-1.3.1.dist-info
+2025-07-15T11:48:29.0757920Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 sqlalchemy
+2025-07-15T11:48:29.0757953Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 sqlalchemy-2.0.41.dist-info
+2025-07-15T11:48:29.0757986Z -rwxrwxrwx 1 nobody nogroup       828 Jul 15 11:42 startup.sh
+2025-07-15T11:48:29.0758026Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 tenacity
+2025-07-15T11:48:29.0758057Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 tenacity-9.1.2.dist-info
+2025-07-15T11:48:29.0758090Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 tiktoken
+2025-07-15T11:48:29.0758122Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 tiktoken-0.9.0.dist-info
+2025-07-15T11:48:29.0758153Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 tiktoken_ext
+2025-07-15T11:48:29.0758184Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 tqdm
+2025-07-15T11:48:29.0758227Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 tqdm-4.67.1.dist-info
+2025-07-15T11:48:29.0758259Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 typing_extensions-4.14.1.dist-info
+2025-07-15T11:48:29.0758290Z -rwxrwxrwx 1 nobody nogroup    157408 Jul 15 11:41 typing_extensions.py
+2025-07-15T11:48:29.0758322Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 typing_inspect-0.9.0.dist-info
+2025-07-15T11:48:29.0758352Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:43 typing_inspection
+2025-07-15T11:48:29.0758386Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 typing_inspection-0.4.1.dist-info
+2025-07-15T11:48:29.0758429Z -rwxrwxrwx 1 nobody nogroup     28269 Jul 15 11:41 typing_inspect.py
+2025-07-15T11:48:29.0758460Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 urllib3
+2025-07-15T11:48:29.0758494Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 urllib3-2.5.0.dist-info
+2025-07-15T11:48:29.0758526Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 werkzeug
+2025-07-15T11:48:29.0758558Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 werkzeug-3.1.3.dist-info
+2025-07-15T11:48:29.0758602Z -rwxrwxrwx 1 nobody nogroup     32549 Jul 15 11:42 whatsapp_bot.py
+2025-07-15T11:48:29.0758636Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 _yaml
+2025-07-15T11:48:29.0758663Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 yaml
+2025-07-15T11:48:29.0758693Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 yarl
+2025-07-15T11:48:29.0758723Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 yarl-1.20.1.dist-info
+2025-07-15T11:48:29.0758755Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 zstandard
+2025-07-15T11:48:29.0758798Z drwxrwxrwx 2 nobody nogroup         0 Jul 15 11:42 zstandard-0.23.0.dist-info
+2025-07-15T11:48:29.0807799Z PYTHONPATH is set to: /home/site/wwwroot
+2025-07-15T11:48:29.0808069Z --- Starting Gunicorn with debug logging ---
+2025-07-15T11:48:29.8053461Z [2025-07-15 11:48:29 +0000] [1025] [DEBUG] Current configuration:
+2025-07-15T11:48:29.8054244Z   config: ./gunicorn.conf.py
+2025-07-15T11:48:29.8054299Z   wsgi_app: None
+2025-07-15T11:48:29.8054337Z   bind: ['0.0.0.0:8000']
+2025-07-15T11:48:29.8054370Z   backlog: 2048
+2025-07-15T11:48:29.8054401Z   workers: 1
+2025-07-15T11:48:29.8054433Z   worker_class: sync
+2025-07-15T11:48:29.8054486Z   threads: 1
+2025-07-15T11:48:29.8054519Z   worker_connections: 1000
+2025-07-15T11:48:29.8054551Z   max_requests: 0
+2025-07-15T11:48:29.8054585Z   max_requests_jitter: 0
+2025-07-15T11:48:29.8054616Z   timeout: 30
+2025-07-15T11:48:29.8054649Z   graceful_timeout: 30
+2025-07-15T11:48:29.8054681Z   keepalive: 2
+2025-07-15T11:48:29.8054730Z   limit_request_line: 4094
+2025-07-15T11:48:29.8054762Z   limit_request_fields: 100
+2025-07-15T11:48:29.8054792Z   limit_request_field_size: 8190
+2025-07-15T11:48:29.8054823Z   reload: False
+2025-07-15T11:48:29.8054855Z   reload_engine: auto
+2025-07-15T11:48:29.8054886Z   reload_extra_files: []
+2025-07-15T11:48:29.8054915Z   spew: False
+2025-07-15T11:48:29.8054954Z   check_config: False
+2025-07-15T11:48:29.8054983Z   print_config: False
+2025-07-15T11:48:29.8055012Z   preload_app: False
+2025-07-15T11:48:29.8055041Z   sendfile: None
+2025-07-15T11:48:29.8055070Z   reuse_port: False
+2025-07-15T11:48:29.8055099Z   chdir: /home/site/wwwroot
+2025-07-15T11:48:29.8055129Z   daemon: False
+2025-07-15T11:48:29.8055172Z   raw_env: []
+2025-07-15T11:48:29.8055200Z   pidfile: None
+2025-07-15T11:48:29.8055229Z   worker_tmp_dir: None
+2025-07-15T11:48:29.8055257Z   user: 0
+2025-07-15T11:48:29.8055315Z   group: 0
+2025-07-15T11:48:29.8055343Z   umask: 0
+2025-07-15T11:48:29.8055374Z   initgroups: False
+2025-07-15T11:48:29.8055415Z   tmp_upload_dir: None
+2025-07-15T11:48:29.8055449Z   secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+2025-07-15T11:48:29.8055482Z   forwarded_allow_ips: ['127.0.0.1', '::1']
+2025-07-15T11:48:29.8055513Z   accesslog: -
+2025-07-15T11:48:29.8055543Z   disable_redirect_access_to_syslog: False
+2025-07-15T11:48:29.8055577Z   access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+2025-07-15T11:48:29.8055617Z   errorlog: -
+2025-07-15T11:48:29.8055647Z   loglevel: debug
+2025-07-15T11:48:29.8055677Z   capture_output: False
+2025-07-15T11:48:29.8055709Z   logger_class: gunicorn.glogging.Logger
+2025-07-15T11:48:29.8055739Z   logconfig: None
+2025-07-15T11:48:29.8055769Z   logconfig_dict: {}
+2025-07-15T11:48:29.8055799Z   logconfig_json: None
+2025-07-15T11:48:29.8055839Z   syslog_addr: udp://localhost:514
+2025-07-15T11:48:29.8055868Z   syslog: False
+2025-07-15T11:48:29.8055898Z   syslog_prefix: None
+2025-07-15T11:48:29.8055931Z   syslog_facility: user
+2025-07-15T11:48:29.8055965Z   enable_stdio_inheritance: False
+2025-07-15T11:48:29.8055996Z   statsd_host: None
+2025-07-15T11:48:29.8056026Z   dogstatsd_tags:
+2025-07-15T11:48:29.8056067Z   statsd_prefix:
+2025-07-15T11:48:29.8056096Z   proc_name: None
+2025-07-15T11:48:29.8056130Z   default_proc_name: whatsapp_bot:app
+2025-07-15T11:48:29.8056163Z   pythonpath: None
+2025-07-15T11:48:29.8056192Z   paste: None
+2025-07-15T11:48:29.8056226Z   on_starting: <function OnStarting.on_starting at 0x758a784e4720>
+2025-07-15T11:48:29.8056259Z   on_reload: <function OnReload.on_reload at 0x758a784e4860>
+2025-07-15T11:48:29.8056306Z   when_ready: <function WhenReady.when_ready at 0x758a784e49a0>
+2025-07-15T11:48:29.8056340Z   pre_fork: <function Prefork.pre_fork at 0x758a784e4ae0>
+2025-07-15T11:48:29.8056378Z   post_fork: <function Postfork.post_fork at 0x758a784e4c20>
+2025-07-15T11:48:29.8056411Z   post_worker_init: <function PostWorkerInit.post_worker_init at 0x758a784e4d60>
+2025-07-15T11:48:29.8056444Z   worker_int: <function WorkerInt.worker_int at 0x758a784e4ea0>
+2025-07-15T11:48:29.8056488Z   worker_abort: <function WorkerAbort.worker_abort at 0x758a784e4fe0>
+2025-07-15T11:48:29.8056521Z   pre_exec: <function PreExec.pre_exec at 0x758a784e5120>
+2025-07-15T11:48:29.8056555Z   pre_request: <function PreRequest.pre_request at 0x758a784e5260>
+2025-07-15T11:48:29.8056588Z   post_request: <function PostRequest.post_request at 0x758a784e5300>
+2025-07-15T11:48:29.8056620Z   child_exit: <function ChildExit.child_exit at 0x758a784e5440>
+2025-07-15T11:48:29.8056654Z   worker_exit: <function WorkerExit.worker_exit at 0x758a784e5580>
+2025-07-15T11:48:29.8056701Z   nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x758a784e56c0>
+2025-07-15T11:48:29.8056736Z   on_exit: <function OnExit.on_exit at 0x758a784e5800>
+2025-07-15T11:48:29.8056770Z   ssl_context: <function NewSSLContext.ssl_context at 0x758a784e59e0>
+2025-07-15T11:48:29.8056801Z   proxy_protocol: False
+2025-07-15T11:48:29.8056832Z   proxy_allow_ips: ['127.0.0.1', '::1']
+2025-07-15T11:48:29.8056862Z   keyfile: None
+2025-07-15T11:48:29.8056906Z   certfile: None
+2025-07-15T11:48:29.8056936Z   ssl_version: 2
+2025-07-15T11:48:29.8056965Z   cert_reqs: 0
+2025-07-15T11:48:29.8056995Z   ca_certs: None
+2025-07-15T11:48:29.8057025Z   suppress_ragged_eofs: True
+2025-07-15T11:48:29.8057057Z   do_handshake_on_connect: False
+2025-07-15T11:48:29.8057089Z   ciphers: None
+2025-07-15T11:48:29.8057134Z   raw_paste_global_conf: []
+2025-07-15T11:48:29.8057164Z   permit_obsolete_folding: False
+2025-07-15T11:48:29.8057195Z   strip_header_spaces: False
+2025-07-15T11:48:29.8057226Z   permit_unconventional_http_method: False
+2025-07-15T11:48:29.8057256Z   permit_unconventional_http_version: False
+2025-07-15T11:48:29.8057288Z   casefold_http_method: False
+2025-07-15T11:48:29.8057318Z   forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+2025-07-15T11:48:29.8057357Z   header_map: drop
+2025-07-15T11:48:29.8075620Z [2025-07-15 11:48:29 +0000] [1025] [INFO] Starting gunicorn 23.0.0
+2025-07-15T11:48:29.8083994Z [2025-07-15 11:48:29 +0000] [1025] [DEBUG] Arbiter booted
+2025-07-15T11:48:29.8086698Z [2025-07-15 11:48:29 +0000] [1025] [INFO] Listening at: http://0.0.0.0:8000 (1025)
+2025-07-15T11:48:29.8088563Z [2025-07-15 11:48:29 +0000] [1025] [INFO] Using worker: sync
+2025-07-15T11:48:29.8121026Z [2025-07-15 11:48:29 +0000] [1028] [INFO] Booting worker with pid: 1028
+2025-07-15T11:48:29.8805500Z [2025-07-15 11:48:29 +0000] [1025] [DEBUG] 1 workers
+2025-07-15T11:48:48.5380348Z [2025-07-15 11:48:48 +0000] [1028] [INFO] Flask logger configured to use Gunicorn logger settings.
+2025-07-15T11:48:48.5385779Z [2025-07-15 11:48:48 +0000] [1028] [INFO] Attempting to connect to Redis at wabaapolo.redis.cache.windows.net:6380
+2025-07-15T11:48:48.5389191Z [2025-07-15 11:48:48 +0000] [1028] [ERROR] An unexpected error occurred during Redis initialization: Invalid SSL Certificate Requirements Flag: CERT_NONE. Falling back to in-memory set.
+2025-07-15T11:48:48.5565376Z /home/site/wwwroot/langchain_openai/embeddings/base.py:271: UserWarning: WARNING! retry_max_session_seconds is not default parameter.
+2025-07-15T11:48:48.5565903Z                     retry_max_session_seconds was transferred to model_kwargs.
+2025-07-15T11:48:48.5565962Z                     Please confirm that retry_max_session_seconds is what you intended.
+2025-07-15T11:48:48.5566000Z   warnings.warn(
+2025-07-15T11:48:54.4148605Z /home/site/wwwroot/gunicorn/util.py:370: UserWarning: WARNING! retry_max_session_seconds is not default parameter.
+2025-07-15T11:48:54.4149290Z                 retry_max_session_seconds was transferred to model_kwargs.
+2025-07-15T11:48:54.4149350Z                 Please confirm that retry_max_session_seconds is what you intended.
+2025-07-15T11:48:54.4149587Z   mod = importlib.import_module(module)
+2025-07-15T11:48:54.4823714Z /home/site/wwwroot/whatsapp_bot.py:176: LangChainDeprecationWarning: Please see the migration guide at: https://python.langchain.com/docs/versions/migrating_memory/
+2025-07-15T11:48:54.4824263Z   memory = ConversationBufferMemory(
+2025-07-15T11:48:54.4861062Z [2025-07-15 11:48:54 +0000] [1028] [DEBUG] GET /robots933456.txt
+2025-07-15T11:48:54.4946311Z 169.254.129.1 - - [15/Jul/2025:11:48:54 +0000] "GET /robots933456.txt HTTP/1.1" 404 207 "-" "HealthCheck/1.0"
+2025-07-15T11:48:54.5152717Z Site startup probe succeeded after 28.6587847 seconds.
+2025-07-15T11:48:55.4377099Z [2025-07-15 11:48:55 +0000] [1028] [DEBUG] GET /
+2025-07-15T11:48:55.4390174Z 169.254.129.1 - - [15/Jul/2025:11:48:55 +0000] "GET / HTTP/1.1" 404 207 "-" "ReadyForRequest/1.0 (LocalCache)"
+2025-07-15T11:48:55.4782732Z [2025-07-15 11:48:55 +0000] [1028] [DEBUG] GET /
+2025-07-15T11:48:55.4797693Z 169.254.129.1 - - [15/Jul/2025:11:48:55 +0000] "GET / HTTP/1.1" 404 207 "-" "ReadyForRequest/1.0 (AppInit)"
+2025-07-15T11:48:55.1414706Z Site started.
+2025-07-15T11:48:55.1644164Z Site is running with deployment version: 0e24ec65-2e52-4072-87c1-8ff50a949352
