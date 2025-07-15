@@ -211,6 +211,10 @@ def send_whatsapp(to: str, text: str) -> None:
 
 # --- webhook ------------------------------------------------------------------
 
+@app.route("/", methods=["GET"])
+def hello():
+    return "Hello, World!", 200
+
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
     # 1. handshake -------------------------------------------------------------
