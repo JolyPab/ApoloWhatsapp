@@ -24,26 +24,26 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Create and start virtual environment
+      - name: Make startup script executable
+        run: chmod +x startup.sh
+
+      - name: Install dependencies into package directory
+        run: pip install --target="./package" -r requirements.txt
+
+      - name: Copy application files to package directory
         run: |
-          python -m venv venv
-          source venv/bin/activate
-      
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-        
-      # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+          cp whatsapp_bot.py ./package/
+          cp startup.sh ./package/
+          cp -r apolo_faiss/ ./package/
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: (cd package && zip -r ../release.zip .)
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v4
         with:
           name: python-app
-          path: |
-            release.zip
-            !venv/
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -61,9 +61,6 @@ jobs:
         with:
           name: python-app
       
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -71,5 +68,5 @@ jobs:
           app-name: 'ApoloWhatsapp'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: .
+          package: release.zip
           
