@@ -23,17 +23,24 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Create package directory and install dependencies
+      - name: Create virtual environment and install dependencies
         run: |
-          pip install --target="./${{ env.PACKAGE_DIR }}" -r requirements.txt
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install gunicorn
 
       - name: Create deployment package
         run: |
+          # Create deployment directory
+          mkdir ${{ env.PACKAGE_DIR }}
           # Copy application files
-          cp whatsapp_bot.py ./${{ env.PACKAGE_DIR }}/
-          cp startup.sh ./${{ env.PACKAGE_DIR }}/
-          # Copy data directory
-          cp -r apolo_faiss ./${{ env.PACKAGE_DIR }}/
+          cp whatsapp_bot.py ${{ env.PACKAGE_DIR }}/
+          cp startup.sh ${{ env.PACKAGE_DIR }}/
+          cp -r apolo_faiss ${{ env.PACKAGE_DIR }}/
+          # Copy dependencies
+          cp -r venv/lib/python3.11/site-packages/* ${{ env.PACKAGE_DIR }}/
           # Create the zip file
           cd ${{ env.PACKAGE_DIR }}
           zip -r ../release.zip .
