@@ -53,6 +53,9 @@ else:
 REDIS_HOST = os.getenv("REDIS_HOST")
 REDIS_PORT = int(os.getenv("REDIS_PORT", 6380))
 REDIS_PASSWORD = os.getenv("REDIS_PASSWORD")
+# Azure Cache for Redis может требовать имя пользователя (часто 'default')
+REDIS_USERNAME = os.getenv("REDIS_USERNAME") 
+
 REDIS_PROCESSED_MESSAGES_KEY_PREFIX = "whatsapp_processed_msg:"
 REDIS_MESSAGE_ID_TTL_SECONDS = 24 * 60 * 60 # 24 часа
 
@@ -65,6 +68,7 @@ if REDIS_HOST and REDIS_PASSWORD:
         redis_client = redis.Redis(
             host=REDIS_HOST,
             port=REDIS_PORT,
+            username=REDIS_USERNAME, # Добавлено имя пользователя
             password=REDIS_PASSWORD,
             ssl=True, # Azure Cache for Redis требует SSL
             ssl_cert_reqs='none', # ИСПРАВЛЕНО: Для Azure используется 'none', а не 'CERT_NONE'
