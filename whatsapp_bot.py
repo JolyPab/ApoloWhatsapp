@@ -20,7 +20,14 @@ BOT_NUMBER = os.getenv("BOT_NUMBER")
 DIALOG_BASE_URL      = os.getenv("DIALOG_BASE_URL")
 DIALOG_API_KEY       = os.getenv("DIALOG_API_KEY")
 WEBHOOK_VERIFY_TOKEN = os.getenv("WEBHOOK_VERIFY_TOKEN")
-AGENT_NUMBERS        = json.loads(os.getenv("AGENT_NUMBERS", "[]"))
+# AGENT_NUMBERS        = json.loads(os.getenv("AGENT_NUMBERS", "[]"))
+
+# Более надежная загрузка AGENT_NUMBERS, чтобы избежать падения из-за некорректного JSON в env
+agent_numbers_raw = os.getenv("AGENT_NUMBERS")
+try:
+    AGENT_NUMBERS = json.loads(agent_numbers_raw) if agent_numbers_raw else []
+except json.JSONDecodeError:
+    AGENT_NUMBERS = [] # По умолчанию пустой список в случае ошибки
 
 # --- Flask app ---
 app = Flask(__name__)
@@ -85,7 +92,8 @@ embeddings = AzureOpenAIEmbeddings(
     api_key=os.getenv("AZURE_EMBEDDINGS_API_KEY"),
     azure_endpoint=os.getenv("AZURE_EMBEDDINGS_ENDPOINT"),
     deployment="text-embedding-ada-002",
-    api_version="2023-05-15"
+    api_version="2023-05-15",
+    retry_max_session_seconds=120 # Добавим таймаут для стабильности
 )
 index = FAISS.load_local("apolo_faiss", embeddings, allow_dangerous_deserialization=True)
 
@@ -161,7 +169,8 @@ llm = AzureChatOpenAI(
     azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
     azure_deployment="gpt-4",
     api_version="2024-02-15-preview",
-    temperature=0.1
+    temperature=0.1,
+    retry_max_session_seconds=120 # Добавим таймаут для стабильности
 )
 
 memory = ConversationBufferMemory(
@@ -479,7 +488,8 @@ if __name__ == "__main__":
             api_key=os.getenv("AZURE_EMBEDDINGS_API_KEY"),
             azure_endpoint=os.getenv("AZURE_EMBEDDINGS_ENDPOINT"),
             deployment="text-embedding-ada-002",
-            api_version="2023-05-15"
+            api_version="2023-05-15",
+            retry_max_session_seconds=120 # Добавим таймаут для стабильности
         )
         index_for_test = FAISS.load_local("apolo_faiss", embeddings_for_test, allow_dangerous_deserialization=True)
         
@@ -488,7 +498,8 @@ if __name__ == "__main__":
             azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
             azure_deployment="gpt-4",
             api_version="2024-02-15-preview",
-            temperature=0.1
+            temperature=0.1,
+            retry_max_session_seconds=120 # Добавим таймаут для стабильности
         )
         current_date_for_test = datetime.now().strftime("%Y-%m-%d")
         PROMPT_FOR_TEST = PromptTemplate(
