@@ -74,6 +74,9 @@ if REDIS_HOST and REDIS_PASSWORD:
         redis_client.ping() # Проверка соединения
         app.logger.info(f"Successfully connected to Redis at {REDIS_HOST}:{REDIS_PORT}")
         USE_REDIS_FOR_PROCESSED_MESSAGES = True
+    except redis.exceptions.AuthenticationError as e_auth:
+        app.logger.error(f"Redis authentication failed (invalid password?): {e_auth}. Falling back to in-memory set.")
+        processed_messages_memory = set()
     except redis.exceptions.TimeoutError as e_timeout:
         app.logger.error(f"Redis connection timed out: {e_timeout}. Falling back to in-memory set for processed messages (NOT SUITABLE FOR PRODUCTION WITH MULTIPLE WORKERS).")
         processed_messages_memory = set()
@@ -210,10 +213,6 @@ def send_whatsapp(to: str, text: str) -> None:
 
 
 # --- webhook ------------------------------------------------------------------
-
-@app.route("/", methods=["GET"])
-def hello():
-    return "Hello, World!", 200
 
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
