@@ -48,32 +48,32 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     permissions:
       id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: python-app
-
+      
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      
       - name: Login to Azure
-        uses: azure/login@v2
+        uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F8E8C4F7C8DE4964BFE289B0780B90E7 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_943F7BB08E6647EBABADB978BF46351E }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_67EFBC598EDA4838811B1AFB94E3938D }}
+          creds: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
       - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
         with:
           app-name: 'ApoloWhatsapp'
           slot-name: 'Production'
+          package: .
           
