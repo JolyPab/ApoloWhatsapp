@@ -27,7 +27,7 @@ print("AZURE_DEBUG: Imported langchain_community.vectorstores")
 from langchain.prompts import PromptTemplate
 print("AZURE_DEBUG: Imported langchain.prompts")
 
-# --- Load env ---
+# --- Load env ----
 print("AZURE_DEBUG: Loading environment variables...")
 load_dotenv()
 print("AZURE_DEBUG: load_dotenv() finished.")
