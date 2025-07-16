@@ -115,8 +115,7 @@ embeddings = AzureOpenAIEmbeddings(
     api_key=os.getenv("AZURE_EMBEDDINGS_API_KEY"),
     azure_endpoint=os.getenv("AZURE_EMBEDDINGS_ENDPOINT"),
     deployment="text-embedding-ada-002",
-    api_version="2023-05-15",
-    retry_max_session_seconds=120 # Добавим таймаут для стабильности
+    api_version="2023-05-15"
 )
 index = FAISS.load_local("apolo_faiss", embeddings, allow_dangerous_deserialization=True)
 
@@ -192,8 +191,7 @@ llm = AzureChatOpenAI(
     azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
     azure_deployment="gpt-4",
     api_version="2024-02-15-preview",
-    temperature=0.1,
-    retry_max_session_seconds=120 # Добавим таймаут для стабильности
+    temperature=0.1
 )
 
 memory = ConversationBufferMemory(
