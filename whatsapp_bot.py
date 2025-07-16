@@ -1,20 +1,36 @@
 import os
+print("AZURE_DEBUG: Starting whatsapp_bot.py")
+
 import json
+print("AZURE_DEBUG: Imported json")
 import re
+print("AZURE_DEBUG: Imported re")
 import requests
+print("AZURE_DEBUG: Imported requests")
 import redis
+print("AZURE_DEBUG: Imported redis")
 from datetime import datetime
+print("AZURE_DEBUG: Imported datetime")
 from flask import Flask, request, jsonify
+print("AZURE_DEBUG: Imported Flask")
 from dotenv import load_dotenv
+print("AZURE_DEBUG: Imported dotenv")
 
 from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
+print("AZURE_DEBUG: Imported langchain_openai")
 from langchain.chains import ConversationalRetrievalChain
+print("AZURE_DEBUG: Imported langchain.chains")
 from langchain.memory import ConversationBufferMemory
+print("AZURE_DEBUG: Imported langchain.memory")
 from langchain_community.vectorstores import FAISS
+print("AZURE_DEBUG: Imported langchain_community.vectorstores")
 from langchain.prompts import PromptTemplate
+print("AZURE_DEBUG: Imported langchain.prompts")
 
 # --- Load env ---
+print("AZURE_DEBUG: Loading environment variables...")
 load_dotenv()
+print("AZURE_DEBUG: load_dotenv() finished.")
 MY_NUMBER  = os.getenv("MY_WHATSAPP_NUMBER")
 BOT_NUMBER = os.getenv("BOT_NUMBER")
 DIALOG_BASE_URL      = os.getenv("DIALOG_BASE_URL")
