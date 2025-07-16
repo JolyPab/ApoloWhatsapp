@@ -216,7 +216,7 @@ def send_whatsapp(to: str, text: str) -> None:
         app.logger.info(f"360dialog send_whatsapp to {to} SUCCEEDED. Status: {r.status_code}. Payload: {payload_str}. Response: {r.text}")
 
 
-# --- webhook ------------------------------------------------------------------
+# --- webhook --------------------------------------------------------------------
 
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
