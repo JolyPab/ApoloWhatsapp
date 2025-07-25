@@ -1,3 +1,3 @@
 #!/bin/bash
-export PYTHONPATH="/home/site/wwwroot"
-exec gunicorn --bind=0.0.0.0:8000 --workers=4 --timeout 600 whatsapp_bot:app
+export GUNICORN_CMD_ARGS="--timeout 600 --access-logfile -"
+gunicorn app:app 
