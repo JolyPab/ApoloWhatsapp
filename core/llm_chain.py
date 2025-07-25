@@ -28,8 +28,8 @@ class LLMChain:
     def get_conversation_memory(self, session_id: str) -> ConversationBufferMemory:
         """Получает Redis-backed память для конкретной сессии."""
         try:
-            # Создаем Redis-backed историю чата с правильным URL форматом
-            redis_url = f"redis://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}"
+            # Создаем Redis-backed историю чата с SSL для Azure Redis Cache
+            redis_url = f"rediss://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}"
             
             message_history = RedisChatMessageHistory(
                 session_id=f"chat:{session_id}",
