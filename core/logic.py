@@ -26,27 +26,21 @@ def process_message(from_number: str, message_body: str, message_sid: str):
     if lead_info.get("is_lead"):
         handle_lead(from_number, lead_info)
 
-    # 4. Get Chat History
-    chat_history = redis_client.get_session_history(from_number)
-
-    # 5. Generate response based on routing strategy
+    # 4. Generate response based on routing strategy
     if routing_analysis['strategy'] == 'consultant':
         # Консультативный режим для внешних ссылок
         extracted_info = routing_analysis['extracted_info']
         smart_query = smart_router.generate_smart_query(message_body, extracted_info)
-        rag_response = llm_chain.invoke_chain(smart_query, chat_history)
-        bot_response = smart_router.format_consultant_response(rag_response, extracted_info)
+        bot_response = llm_chain.invoke_chain(smart_query, from_number)
+        bot_response = smart_router.format_consultant_response(bot_response, extracted_info)
     else:
-        # Обычный режим
-        bot_response = llm_chain.invoke_chain(message_body, chat_history)
+        # Обычный режим с использованием памяти чата
+        bot_response = llm_chain.invoke_chain(message_body, from_number)
 
     # 5. Send the response back to the user
     twilio_client.send_whatsapp_message(from_number, bot_response)
 
-    # 6. Update Chat History
-    chat_history.append({"human": message_body})
-    chat_history.append({"ai": bot_response})
-    redis_client.save_session_history(from_number, chat_history)
+    logger.info(f"Response sent to {from_number}")
 
 
 def handle_lead(user_number: str, lead_data: dict):
