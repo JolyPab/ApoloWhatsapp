@@ -9,6 +9,11 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
+@app.route("/")
+def health_check():
+    """Health check endpoint for Azure"""
+    return {"status": "OK", "service": "WhatsApp Bot"}, 200
+
 @app.route("/webhook", methods=["POST"])
 def webhook():
     """
