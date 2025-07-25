@@ -7,7 +7,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import AIMessage, HumanMessage
 from langchain.memory import ConversationBufferMemory
-from langchain.memory.chat_message_histories import RedisChatMessageHistory
+from langchain_community.chat_message_histories import RedisChatMessageHistory
 from config import settings
 
 logger = logging.getLogger(__name__)
@@ -28,11 +28,12 @@ class LLMChain:
     def get_conversation_memory(self, session_id: str) -> ConversationBufferMemory:
         """Получает Redis-backed память для конкретной сессии."""
         try:
-            # Создаем Redis-backed историю чата
+            # Создаем Redis-backed историю чата с правильным URL форматом
+            redis_url = f"redis://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}"
+            
             message_history = RedisChatMessageHistory(
                 session_id=f"chat:{session_id}",
-                url=f"redis://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}",
-                ssl=True
+                url=redis_url
             )
             
             # Создаем память с Redis backend
