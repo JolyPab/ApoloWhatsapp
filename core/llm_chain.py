@@ -7,12 +7,10 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema import AIMessage, HumanMessage
 from langchain.memory import ConversationBufferMemory
+from langchain.memory.chat_message_histories import RedisChatMessageHistory
 from config import settings
 
 logger = logging.getLogger(__name__)
-
-# Глобальное хранилище для памяти чатов по номерам телефонов
-conversation_memories = {}
 
 class LLMChain:
     def __init__(self):
@@ -28,25 +26,45 @@ class LLMChain:
         self.rag_chain = self._create_rag_chain()
 
     def get_conversation_memory(self, session_id: str) -> ConversationBufferMemory:
-        """Получает или создает память для конкретной сессии."""
-        if session_id not in conversation_memories:
-            conversation_memories[session_id] = ConversationBufferMemory(
+        """Получает Redis-backed память для конкретной сессии."""
+        try:
+            # Создаем Redis-backed историю чата
+            message_history = RedisChatMessageHistory(
+                session_id=f"chat:{session_id}",
+                url=f"redis://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}",
+                ssl=True
+            )
+            
+            # Создаем память с Redis backend
+            memory = ConversationBufferMemory(
+                chat_memory=message_history,
                 return_messages=True,
                 memory_key="chat_history"
             )
-        return conversation_memories[session_id]
+            
+            return memory
+            
+        except Exception as e:
+            logger.warning(f"Redis недоступен для памяти {session_id}: {e}. Использую временную память.")
+            # Fallback к временной памяти если Redis недоступен
+            return ConversationBufferMemory(
+                return_messages=True,
+                memory_key="chat_history"
+            )
 
     def add_message_to_memory(self, session_id: str, human_message: str, ai_message: str):
         """Добавляет сообщения в память чата."""
         memory = self.get_conversation_memory(session_id)
         memory.chat_memory.add_user_message(human_message)
         memory.chat_memory.add_ai_message(ai_message)
-        logger.info(f"Added messages to memory for session {session_id}")
+        logger.info(f"Added messages to persistent memory for session {session_id}")
 
     def get_chat_history_from_memory(self, session_id: str) -> list:
-        """Получает историю чата из памяти в формате для RAG цепочки."""
+        """Получает историю чата из Redis-backed памяти."""
         memory = self.get_conversation_memory(session_id)
-        return memory.chat_memory.messages
+        messages = memory.chat_memory.messages
+        logger.info(f"Retrieved {len(messages)} messages from persistent memory for session {session_id}")
+        return messages
 
     def _load_vector_store(self):
         if not os.path.exists(settings.FAISS_INDEX_PATH):
@@ -99,11 +117,11 @@ class LLMChain:
 
     def invoke_chain(self, question: str, session_id: str) -> str:
         """
-        Invokes the RAG chain to get an answer using conversation memory.
+        Invokes the RAG chain to get an answer using persistent conversation memory.
         """
         logger.info(f"Invoking RAG chain for question: '{question}' with session: {session_id}")
         
-        # Получаем историю из памяти
+        # Получаем историю из Redis-backed памяти
         chat_history = self.get_chat_history_from_memory(session_id)
         
         response = self.rag_chain.invoke({
@@ -113,7 +131,7 @@ class LLMChain:
         
         answer = response.get("answer", "I'm sorry, I encountered an issue and can't respond right now.")
         
-        # Добавляем текущий диалог в память
+        # Добавляем текущий диалог в Redis-backed память
         self.add_message_to_memory(session_id, question, answer)
         
         logger.info(f"RAG chain response: {answer}")
