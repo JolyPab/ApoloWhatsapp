@@ -34,29 +34,29 @@ class LeadDetector:
     @staticmethod
     def _create_lead_detection_prompt(message: str) -> str:
         return f"""
-        Analyze the following user message from a real estate chat.
-        Your task is to determine if the user is expressing a clear intent to buy, rent, or schedule a visit for a property.
+        Analiza el siguiente mensaje del usuario en un chat inmobiliario.
+        Tu tarea es determinar si el usuario expresa una intención clara de comprar, rentar o agendar una visita a una propiedad.
 
-        Respond ONLY with a JSON object in the following format:
+        Responde SOLO con un objeto JSON en el siguiente formato:
         {{
-            "is_lead": boolean,
+            "is_lead": booleano,
             "interest": "buy" | "rent" | "visit" | "inquiry" | "none",
             "property_mentions": ["property_name_1", "property_name_2"]
         }}
 
-        - "is_lead": true if the user shows concrete interest (e.g., "I want to see it", "I'm interested in buying", "Can we schedule a visit?"). False for general questions or greetings.
-        - "interest": 
-            - "buy": User wants to purchase.
-            - "rent": User wants to rent.
-            - "visit": User explicitly asks to see a property.
-            - "inquiry": User is asking specific questions about a property but hasn't committed to a visit/purchase yet.
-            - "none": No interest shown (e.g., "hello", "thank you").
-        - "property_mentions": A list of any specific property names or addresses mentioned in the message.
+        - "is_lead": verdadero si el usuario muestra interés concreto (por ejemplo, "quiero verlo", "estoy interesado en comprar", "podemos agendar una visita?"). Falso para preguntas generales o saludos.
+        - "interest":
+            - "buy": el usuario quiere comprar.
+            - "rent": el usuario quiere rentar.
+            - "visit": el usuario pide explícitamente ver una propiedad.
+            - "inquiry": el usuario hace preguntas específicas pero aún no se compromete a visitar/comprar.
+            - "none": no hay interés mostrado (por ejemplo, "hola", "gracias").
+        - "property_mentions": lista de nombres o direcciones de propiedades mencionadas en el mensaje.
 
-        User Message: "{message}"
+        Mensaje del usuario: "{message}"
 
-        JSON Response:
+        Respuesta JSON:
         """
 
 # Singleton instance
-lead_detector = LeadDetector(llm_chain) 
+lead_detector = LeadDetector(llm_chain)
