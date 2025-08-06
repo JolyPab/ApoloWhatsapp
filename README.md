@@ -44,6 +44,7 @@ The project follows a modular architecture for clarity and maintainability:
     TWILIO_ACCOUNT_SID=your_account_sid
     TWILIO_AUTH_TOKEN=your_auth_token
     TWILIO_PHONE_NUMBER=your_twilio_whatsapp_number
+    LEAD_NOTIFICATION_NUMBER=realtor_number_to_receive_leads
 
     # Redis Configuration
     REDIS_HOST=your_redis_host
@@ -82,7 +83,8 @@ The `startup.sh` script is configured to run the application using Gunicorn. Azu
 ## Key Features
 
 -   **Modular Design**: Easy to understand, maintain, and extend.
--   **Lead Detection**: A dedicated module analyzes user intent to identify potential customers.
+-   **Lead Detection**: A dedicated module analyzes user intent to identify potential customers and forwards leads to a configured number.
+-   **Property Photos**: Image links in responses are automatically sent as WhatsApp images.
 -   **RAG (Retrieval-Augmented Generation)**: Uses a FAISS vector store to provide answers based on your specific property data.
 -   **Session Management**: Uses Redis to maintain conversation history and prevent processing duplicate messages.
--   **Centralized Configuration**: All settings are managed in one place. 
+-   **Centralized Configuration**: All settings are managed in one place.

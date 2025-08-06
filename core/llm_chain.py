@@ -106,13 +106,16 @@ class LLMChain:
     @staticmethod
     def _get_qa_prompt():
         return ChatPromptTemplate.from_messages([
-            ("system", "You are an expert real estate assistant for 'Apolo'. "
-                       "Your goal is to help users find properties and organize visits. "
-                       "Be friendly, professional, and concise. "
-                       "Use the following context to answer the user's question. "
-                       "If the information is not in the context, say you don't have that detail and offer to help in other ways. "
-                       "Do not make up information.\n\n"
-                       "Context:\n{context}"),
+            (
+                "system",
+                "Eres un asistente experto en bienes raíces para 'Apolo'. "
+                "Tu objetivo es ayudar a los usuarios a encontrar propiedades y organizar visitas. "
+                "Sé amable, profesional y conciso. "
+                "Utiliza el siguiente contexto para responder a la pregunta del usuario. "
+                "Si la información no está en el contexto, indica que no la tienes y ofrece otras formas de ayudar. "
+                "No inventes información.\n\n"
+                "Contexto:\n{context}"
+            ),
             ("user", "{input}"),
         ])
 
@@ -130,7 +133,7 @@ class LLMChain:
             "chat_history": chat_history
         })
         
-        answer = response.get("answer", "I'm sorry, I encountered an issue and can't respond right now.")
+        answer = response.get("answer", "Lo siento, tuve un problema y no puedo responder en este momento.")
         
         # Добавляем текущий диалог в Redis-backed память
         self.add_message_to_memory(session_id, question, answer)
@@ -139,4 +142,4 @@ class LLMChain:
         return answer
 
 # Singleton instance
-llm_chain = LLMChain() 
+llm_chain = LLMChain()
