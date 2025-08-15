@@ -24,34 +24,20 @@ class LLMChain:
         )
         self.retriever = self._load_vector_store().as_retriever()
         self.rag_chain = self._create_rag_chain()
+        # Процессная in-memory память по сессиям, если Redis недоступен
+        self._memory_store: dict[str, ConversationBufferMemory] = {}
 
     def get_conversation_memory(self, session_id: str) -> ConversationBufferMemory:
-        """Получает Redis-backed память для конкретной сессии."""
-        try:
-            # Создаем Redis-backed историю чата с SSL для Azure Redis Cache
-            redis_url = f"rediss://:{settings.REDIS_PASSWORD}@{settings.REDIS_HOST}:{settings.REDIS_PORT}"
-            
-            message_history = RedisChatMessageHistory(
-                session_id=f"chat:{session_id}",
-                url=redis_url
-            )
-            
-            # Создаем память с Redis backend
-            memory = ConversationBufferMemory(
-                chat_memory=message_history,
+        """Возвращает процессную in-memory память для сессии.
+        Пока Redis отключён, храним состояние диалога в self._memory_store.
+        """
+        if session_id not in self._memory_store:
+            logger.info(f"Creating in-process memory for session {session_id}")
+            self._memory_store[session_id] = ConversationBufferMemory(
                 return_messages=True,
                 memory_key="chat_history"
             )
-            
-            return memory
-            
-        except Exception as e:
-            logger.warning(f"Redis недоступен для памяти {session_id}: {e}. Использую временную память.")
-            # Fallback к временной памяти если Redis недоступен
-            return ConversationBufferMemory(
-                return_messages=True,
-                memory_key="chat_history"
-            )
+        return self._memory_store[session_id]
 
     def add_message_to_memory(self, session_id: str, human_message: str, ai_message: str):
         """Добавляет сообщения в память чата."""
@@ -61,7 +47,7 @@ class LLMChain:
         logger.info(f"Added messages to persistent memory for session {session_id}")
 
     def get_chat_history_from_memory(self, session_id: str) -> list:
-        """Получает историю чата из Redis-backed памяти."""
+        """Получает историю чата из процессной памяти."""
         memory = self.get_conversation_memory(session_id)
         messages = memory.chat_memory.messages
         logger.info(f"Retrieved {len(messages)} messages from persistent memory for session {session_id}")
@@ -94,11 +80,11 @@ class LLMChain:
     @staticmethod
     def _get_history_aware_prompt():
         return ChatPromptTemplate.from_messages([
-            ("system", "Given a chat history and the latest user question "
-                       "which might reference context in the chat history, "
-                       "formulate a standalone question which can be understood "
-                       "without the chat history. Do NOT answer the question, "
-                       "just reformulate it if needed and otherwise return it as is."),
+            ("system", "Dado un historial de chat y la última pregunta del usuario "
+                       "que podría referenciar contexto del historial, "
+                       "formula una pregunta independiente que pueda entenderse "
+                       "sin el historial del chat. NO respondas la pregunta, "
+                       "solo reformúlala si es necesario, de lo contrario devuélvela tal como está."),
             ("placeholder", "{chat_history}"),
             ("user", "{input}"),
         ])
@@ -106,13 +92,21 @@ class LLMChain:
     @staticmethod
     def _get_qa_prompt():
         return ChatPromptTemplate.from_messages([
-            ("system", "You are an expert real estate assistant for 'Apolo'. "
-                       "Your goal is to help users find properties and organize visits. "
-                       "Be friendly, professional, and concise. "
-                       "Use the following context to answer the user's question. "
-                       "If the information is not in the context, say you don't have that detail and offer to help in other ways. "
-                       "Do not make up information.\n\n"
-                       "Context:\n{context}"),
+            ("system", "Eres un asistente experto en bienes raíces para 'Century21 Apolo' en Cancún. "
+                       "Tu objetivo principal es ayudar a los clientes a encontrar propiedades y organizar visitas. "
+                       "Siempre mantén un tono amigable, profesional y entusiasta. "
+                       "\n\nINSTRUCCIONES IMPORTANTES:"
+                       "\n- Usa SIEMPRE la información del contexto proporcionado para responder"
+                       "\n- Si no tienes la información específica, ofrece ayudar de otras maneras"
+                       "\n- NUNCA inventes información que no esté en el contexto"
+                       "\n- Cuando menciones propiedades, incluye detalles como precio, ubicación y características"
+                       "\n- Siempre intenta guiar hacia agendar una visita o contactar con un asesor"
+                       "\n- Sé específico con precios, ubicaciones y características cuando estén disponibles"
+                       "\n- Si el cliente muestra interés serio, sugiere contactar directamente con el asesor"
+                       "\n- Cuando presentes múltiples opciones, enuméralas como 1., 2., 3. y mantén consistencia en los números entre mensajes"
+                       "\n- Si el usuario se refiere a 'opción 2', 'la 2', 'la segunda', etc., entiende que habla de la opción #2 listada previamente y entrega más detalles de esa opción"
+                       "\n- Mantén las respuestas concisas (máx. 6-8 líneas) y ofrece continuar con más detalles si el cliente lo pide"
+                       "\n\nContexto de propiedades disponibles:\n{context}"),
             ("user", "{input}"),
         ])
 

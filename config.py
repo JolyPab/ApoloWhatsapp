@@ -32,4 +32,7 @@ class Settings:
     # Logging
     LOGGING_LEVEL = os.environ.get("LOGGING_LEVEL", "INFO").upper()
 
+    # Agent notification
+    AGENT_WHATSAPP_NUMBER = os.environ.get("AGENT_WHATSAPP_NUMBER")
+
 settings = Settings() 

@@ -34,26 +34,33 @@ class LeadDetector:
     @staticmethod
     def _create_lead_detection_prompt(message: str) -> str:
         return f"""
-        Analyze the following user message from a real estate chat.
-        Your task is to determine if the user is expressing a clear intent to buy, rent, or schedule a visit for a property.
+        Analiza el siguiente mensaje de un cliente en un chat de bienes raíces.
+        Tu tarea es determinar si el usuario expresa una intención clara de comprar, rentar o agendar una visita.
 
-        Respond ONLY with a JSON object in the following format:
+        Responde SOLO con un objeto JSON en el siguiente formato:
         {{
             "is_lead": boolean,
             "interest": "buy" | "rent" | "visit" | "inquiry" | "none",
-            "property_mentions": ["property_name_1", "property_name_2"]
+            "property_mentions": ["nombre_propiedad_1", "nombre_propiedad_2"]
         }}
 
-        - "is_lead": true if the user shows concrete interest (e.g., "I want to see it", "I'm interested in buying", "Can we schedule a visit?"). False for general questions or greetings.
+        - "is_lead": true si el usuario muestra interés concreto (ej: "quiero verla", "me interesa comprar", "podemos agendar una visita?"). False para preguntas generales o saludos.
         - "interest": 
-            - "buy": User wants to purchase.
-            - "rent": User wants to rent.
-            - "visit": User explicitly asks to see a property.
-            - "inquiry": User is asking specific questions about a property but hasn't committed to a visit/purchase yet.
-            - "none": No interest shown (e.g., "hello", "thank you").
-        - "property_mentions": A list of any specific property names or addresses mentioned in the message.
+            - "buy": Usuario quiere comprar (palabras clave: "comprar", "adquirir", "me interesa comprar")
+            - "rent": Usuario quiere rentar (palabras clave: "rentar", "alquilar", "renta")  
+            - "visit": Usuario solicita explícitamente ver una propiedad (palabras clave: "visita", "ver", "conocer", "mostrar")
+            - "inquiry": Usuario hace preguntas específicas sobre una propiedad pero no se compromete a visita/compra
+            - "none": No muestra interés (ej: "hola", "gracias", preguntas muy generales)
+        - "property_mentions": Lista de nombres específicos de propiedades o direcciones mencionadas.
 
-        User Message: "{message}"
+        SEÑALES DE LEAD REAL:
+        - Menciona querer "ver", "visitar", "conocer" una propiedad específica
+        - Expresa interés en "comprar" o "adquirir"
+        - Pregunta sobre "agendar", "cita", "visita"
+        - Menciona estar "interesado/a" en una propiedad específica
+        - Pregunta sobre disponibilidad para ver propiedades
+
+        Mensaje del Usuario: "{message}"
 
         JSON Response:
         """
